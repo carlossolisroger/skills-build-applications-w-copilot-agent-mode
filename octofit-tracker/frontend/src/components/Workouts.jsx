@@ -1,4 +1,5 @@
 import CollectionView from './CollectionView.jsx'
+import { fetchCollection as fetch } from '../api.js'
 
 function Workouts() {
   return (
@@ -6,6 +7,7 @@ function Workouts() {
       description="Choose a workout that fits your goals and your day."
       emptyMessage="No suggested workouts are available right now."
       endpoint="/api/workouts/"
+      fetcher={fetch}
       title="Workouts"
     >
       {(workouts) => (

@@ -1,5 +1,6 @@
 import CollectionView from './CollectionView.jsx'
 import { formatReference } from '../utils/format.js'
+import { fetchCollection as fetch } from '../api.js'
 
 function Users() {
   return (
@@ -7,6 +8,7 @@ function Users() {
       description="Meet the people building healthy habits with OctoFit."
       emptyMessage="No members are registered yet."
       endpoint="/api/users/"
+      fetcher={fetch}
       title="Members"
     >
       {(users) => (

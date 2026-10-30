@@ -1,5 +1,6 @@
 import CollectionView from './CollectionView.jsx'
 import { formatDate, formatReference } from '../utils/format.js'
+import { fetchCollection as fetch } from '../api.js'
 
 function Activities() {
   return (
@@ -7,6 +8,7 @@ function Activities() {
       description="See the latest training sessions logged by the OctoFit community."
       emptyMessage="No activities have been logged yet."
       endpoint="/api/activities/"
+      fetcher={fetch}
       title="Activities"
     >
       {(activities) => (

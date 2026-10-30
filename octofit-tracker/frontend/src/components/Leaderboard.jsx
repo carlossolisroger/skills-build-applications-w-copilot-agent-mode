@@ -1,5 +1,6 @@
 import CollectionView from './CollectionView.jsx'
 import { formatReference } from '../utils/format.js'
+import { fetchCollection as fetch } from '../api.js'
 
 function Leaderboard() {
   return (
@@ -7,6 +8,7 @@ function Leaderboard() {
       description="Celebrate the members and teams leading the way."
       emptyMessage="The leaderboard is waiting for its first scores."
       endpoint="/api/leaderboard/"
+      fetcher={fetch}
       title="Leaderboard"
     >
       {(entries) => (

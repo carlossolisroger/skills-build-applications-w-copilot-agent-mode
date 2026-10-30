@@ -1,7 +1,14 @@
 import { useCollection } from '../hooks/useCollection.js'
 
-function CollectionView({ title, description, endpoint, emptyMessage, children }) {
-  const { items, loading, error } = useCollection(endpoint)
+function CollectionView({
+  title,
+  description,
+  endpoint,
+  fetcher,
+  emptyMessage,
+  children,
+}) {
+  const { items, loading, error } = useCollection(endpoint, fetcher)
 
   return (
     <section>

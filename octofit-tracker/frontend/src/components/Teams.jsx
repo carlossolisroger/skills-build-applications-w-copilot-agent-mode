@@ -1,5 +1,6 @@
 import CollectionView from './CollectionView.jsx'
 import { formatReference } from '../utils/format.js'
+import { fetchCollection as fetch } from '../api.js'
 
 function Teams() {
   return (
@@ -7,6 +8,7 @@ function Teams() {
       description="Find your crew and see who's training together."
       emptyMessage="No teams have been created yet."
       endpoint="/api/teams/"
+      fetcher={fetch}
       title="Teams"
     >
       {(teams) => (
