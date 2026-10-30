@@ -1,0 +1,81 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+}
+
+.app-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #17212f;
+}
+
+.app-brand img {
+  object-fit: contain;
+}
+
+.app-brand strong {
+  font-size: 1.15rem;
+}
+
+.nav-pills .nav-link {
+  color: #4b5a6c;
+  font-weight: 600;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #176b55;
+}
+
+.page-heading {
+  margin-bottom: 1.5rem;
+}
+
+.page-heading h1 {
+  margin-bottom: 0.35rem;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.page-heading p {
+  max-width: 48rem;
+  margin: 0;
+  color: #617083;
+}
+
+.data-card,
+.workout-card {
+  border: 1px solid #e3e8ef;
+  border-radius: 0.9rem;
+  box-shadow: 0 0.25rem 1rem rgb(24 39 56 / 5%);
+}
+
+.data-card {
+  overflow: hidden;
+}
+
+.data-card .table {
+  margin-bottom: 0;
+}
+
+.data-card th {
+  color: #526174;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.workout-card {
+  height: 100%;
+}
+
+.workout-card .badge {
+  text-transform: capitalize;
+}
