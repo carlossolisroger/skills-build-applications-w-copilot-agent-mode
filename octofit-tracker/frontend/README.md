@@ -1,16 +1,26 @@
-# React + Vite
+# OctoFit Tracker frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The presentation tier is a React 19 application built with Vite. Its screens
+load activities, leaderboard entries, teams, users, and workouts from the
+backend API.
 
-Currently, two official plugins are available:
+## API configuration
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+When running in GitHub Codespaces, `VITE_CODESPACE_NAME` must be defined in
+`octofit-tracker/frontend/.env.local` with the Codespace name (the value of
+`CODESPACE_NAME`), for example:
 
-## React Compiler
+```dotenv
+VITE_CODESPACE_NAME=your-codespace-name
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Vite reads this value at startup and sends API requests to
+`https://<codespace-name>-8000.app.github.dev`. Restart the Vite dev server
+after changing `.env.local`.
 
-## Expanding the Oxlint configuration
+If `VITE_CODESPACE_NAME` is unset, the frontend safely uses
+`http://localhost:8000`, which is suitable when the API is running locally.
+The API requests use `/api/activities/`, `/api/leaderboard/`, `/api/teams/`,
+`/api/users/`, and `/api/workouts/`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Start the development server from the frontend directory with `npm run dev`.
