@@ -1,4 +1,8 @@
-const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const codespaceName = (
+  import.meta.env.VITE_CODESPACE_NAME ||
+  import.meta.env.CODESPACE_NAME ||
+  ''
+).trim()
 
 if (codespaceName && !/^[a-z0-9-]+$/i.test(codespaceName)) {
   throw new Error('VITE_CODESPACE_NAME must contain only letters, numbers, and hyphens.')
